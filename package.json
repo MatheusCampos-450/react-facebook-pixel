@@ -1,6 +1,6 @@
 {
   "name": "@matheuscampos_450/react-facebook-pixel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/fb-pixel.js",
   "types": "./types/index.d.ts",
