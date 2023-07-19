@@ -55,7 +55,7 @@ const defaultOptions = {
 //
 export default {
   init(pixelId, advancedMatching = {}, options = defaultOptions) {
-    initialized = (typeof window !== 'undefined') && !!window.fbq;
+    initialized = typeof window !== 'undefined' && !!window.fbq;
     /* eslint-disable */
     !(function(f, b, e, v, n, t, s) {
       if (f.fbq) return;
@@ -108,12 +108,12 @@ export default {
     }
   },
 
-  track(title, data) {
+  track(title, data, options) {
     if (!verifyInit()) {
       return;
     }
 
-    fbq('track', title, data); // eslint-disable-line no-undef
+    fbq('track', title, data, options); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('track', '${title}');`);
@@ -124,12 +124,12 @@ export default {
     }
   },
 
-  trackSingle(pixel, title, data) {
+  trackSingle(pixel, title, data, options) {
     if (!verifyInit()) {
       return;
     }
 
-    fbq('trackSingle', pixel, title, data); // eslint-disable-line no-undef
+    fbq('trackSingle', pixel, title, data, options); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('trackSingle', '${pixel}', '${title}');`);
@@ -140,12 +140,12 @@ export default {
     }
   },
 
-  trackCustom(event, data) {
+  trackCustom(event, data, options) {
     if (!verifyInit()) {
       return;
     }
 
-    fbq('trackCustom', event, data); // eslint-disable-line no-undef
+    fbq('trackCustom', event, data, options); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('trackCustom', '${event}');`);
@@ -156,12 +156,12 @@ export default {
     }
   },
 
-  trackSingleCustom(pixel, event, data) {
+  trackSingleCustom(pixel, event, data, options) {
     if (!verifyInit()) {
       return;
     }
 
-    fbq('trackSingle', pixel, event, data); // eslint-disable-line no-undef
+    fbq('trackSingle', pixel, event, data, options); // eslint-disable-line no-undef
 
     if (debug) {
       log(`called fbq('trackSingleCustom', '${pixel}', '${event}');`);

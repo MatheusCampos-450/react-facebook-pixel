@@ -60,15 +60,6 @@ export interface AddToWishlist extends Data {
   value?: number;
 }
 
-export interface AddToWishlist extends Data {
-  content_name?: string;
-  content_category?: string;
-  content_ids?: object[] | object;
-  contents?: object[];
-  currency?: string;
-  value?: number;
-}
-
 export interface CompleteRegistration extends Data {
   content_name?: String;
   currency?: string;
@@ -170,19 +161,33 @@ export function init(
   advancedMatching?: AdvancedMatching,
   options?: Options,
 ): void;
+
 export function pageView(): void;
-export function track(title: string, data?: Data | any): void;
-export function trackCustom(title: string, data?: Data | any): void;
+
+export function track(title: string, data?: Data | any, options?: any): void;
+
+export function trackCustom(
+  title: string,
+  data?: Data | any,
+  options?: any,
+): void;
+
 export function trackSingle(
   pixel: string,
   title: string,
   data?: Data | any,
+  options?: any,
 ): void;
+
 export function trackSingleCustom(
   pixel: string,
   title: string,
   data?: Data | any,
+  options?: any,
 ): void;
+
 export function fbq(...args: Array<unknown>): void;
+
 export function revokeConsent(): void;
+
 export function grantConsent(): void;
